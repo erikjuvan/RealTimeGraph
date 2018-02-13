@@ -622,5 +622,20 @@ namespace RealTimeGraph
             button_auto_capture.BackColor = Color.Yellow;
             button_single_capture.BackColor = DefaultBackColor;
         }
+
+        private void checkBox_skip_2nd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                if (checkBox_skip_2nd.Checked == true)
+                {
+                    serialPort.Write("CSKIPSCND,1");
+                }
+                else
+                {
+                    serialPort.Write("CSKIPSCND,0");
+                }
+            }
+        }
     }
 }

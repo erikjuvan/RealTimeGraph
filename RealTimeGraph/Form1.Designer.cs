@@ -56,6 +56,7 @@
             this.button_send_times = new System.Windows.Forms.Button();
             this.button_single_capture = new System.Windows.Forms.Button();
             this.button_auto_capture = new System.Windows.Forms.Button();
+            this.checkBox_skip_2nd = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -314,11 +315,23 @@
             this.button_auto_capture.UseVisualStyleBackColor = true;
             this.button_auto_capture.Click += new System.EventHandler(this.button_auto_capture_Click);
             // 
+            // checkBox_skip_2nd
+            // 
+            this.checkBox_skip_2nd.AutoSize = true;
+            this.checkBox_skip_2nd.Location = new System.Drawing.Point(135, 431);
+            this.checkBox_skip_2nd.Name = "checkBox_skip_2nd";
+            this.checkBox_skip_2nd.Size = new System.Drawing.Size(68, 17);
+            this.checkBox_skip_2nd.TabIndex = 22;
+            this.checkBox_skip_2nd.Text = "Skip 2nd";
+            this.checkBox_skip_2nd.UseVisualStyleBackColor = true;
+            this.checkBox_skip_2nd.CheckedChanged += new System.EventHandler(this.checkBox_skip_2nd_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1590, 705);
+            this.Controls.Add(this.checkBox_skip_2nd);
             this.Controls.Add(this.button_auto_capture);
             this.Controls.Add(this.button_single_capture);
             this.Controls.Add(this.button_send_times);
@@ -379,6 +392,7 @@
         private System.Windows.Forms.Button button_send_times;
         private System.Windows.Forms.Button button_single_capture;
         private System.Windows.Forms.Button button_auto_capture;
+        private System.Windows.Forms.CheckBox checkBox_skip_2nd;
     }
 }
 
