@@ -47,7 +47,6 @@
             this.textBox_samplef = new System.Windows.Forms.TextBox();
             this.button_send_freq = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button_filtered = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.button_send_params = new System.Windows.Forms.Button();
             this.textBox_param = new System.Windows.Forms.TextBox();
@@ -57,7 +56,13 @@
             this.button_single_capture = new System.Windows.Forms.Button();
             this.button_auto_capture = new System.Windows.Forms.Button();
             this.checkBox_skip_2nd = new System.Windows.Forms.CheckBox();
+            this.button_train = new System.Windows.Forms.Button();
+            this.radioButton_raw = new System.Windows.Forms.RadioButton();
+            this.radioButton_trained = new System.Windows.Forms.RadioButton();
+            this.radioButton_filtered = new System.Windows.Forms.RadioButton();
+            this.groupBox_display_data = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox_display_data.SuspendLayout();
             this.SuspendLayout();
             // 
             // zedGraphControl1
@@ -207,14 +212,14 @@
             // 
             // textBox_samplef
             // 
-            this.textBox_samplef.Location = new System.Drawing.Point(25, 274);
+            this.textBox_samplef.Location = new System.Drawing.Point(25, 338);
             this.textBox_samplef.Name = "textBox_samplef";
             this.textBox_samplef.Size = new System.Drawing.Size(104, 20);
             this.textBox_samplef.TabIndex = 10;
             // 
             // button_send_freq
             // 
-            this.button_send_freq.Location = new System.Drawing.Point(135, 271);
+            this.button_send_freq.Location = new System.Drawing.Point(135, 335);
             this.button_send_freq.Name = "button_send_freq";
             this.button_send_freq.Size = new System.Drawing.Size(75, 23);
             this.button_send_freq.TabIndex = 11;
@@ -225,26 +230,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 258);
+            this.label4.Location = new System.Drawing.Point(22, 322);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 12;
             this.label4.Text = "Sample freq:";
             // 
-            // button_filtered
-            // 
-            this.button_filtered.Location = new System.Drawing.Point(135, 194);
-            this.button_filtered.Name = "button_filtered";
-            this.button_filtered.Size = new System.Drawing.Size(75, 23);
-            this.button_filtered.TabIndex = 13;
-            this.button_filtered.Text = "FILTERED";
-            this.button_filtered.UseVisualStyleBackColor = true;
-            this.button_filtered.Click += new System.EventHandler(this.button_filtered_Click);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 312);
+            this.label7.Location = new System.Drawing.Point(22, 376);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 13);
             this.label7.TabIndex = 16;
@@ -252,7 +247,7 @@
             // 
             // button_send_params
             // 
-            this.button_send_params.Location = new System.Drawing.Point(135, 328);
+            this.button_send_params.Location = new System.Drawing.Point(135, 392);
             this.button_send_params.Name = "button_send_params";
             this.button_send_params.Size = new System.Drawing.Size(75, 23);
             this.button_send_params.TabIndex = 15;
@@ -262,7 +257,7 @@
             // 
             // textBox_param
             // 
-            this.textBox_param.Location = new System.Drawing.Point(25, 331);
+            this.textBox_param.Location = new System.Drawing.Point(25, 395);
             this.textBox_param.Name = "textBox_param";
             this.textBox_param.Size = new System.Drawing.Size(104, 20);
             this.textBox_param.TabIndex = 14;
@@ -271,7 +266,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(22, 368);
+            this.label8.Location = new System.Drawing.Point(22, 432);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(159, 13);
             this.label8.TabIndex = 17;
@@ -279,7 +274,7 @@
             // 
             // textBox_times
             // 
-            this.textBox_times.Location = new System.Drawing.Point(25, 384);
+            this.textBox_times.Location = new System.Drawing.Point(25, 448);
             this.textBox_times.Name = "textBox_times";
             this.textBox_times.Size = new System.Drawing.Size(104, 20);
             this.textBox_times.TabIndex = 18;
@@ -287,7 +282,7 @@
             // 
             // button_send_times
             // 
-            this.button_send_times.Location = new System.Drawing.Point(135, 382);
+            this.button_send_times.Location = new System.Drawing.Point(135, 446);
             this.button_send_times.Name = "button_send_times";
             this.button_send_times.Size = new System.Drawing.Size(75, 23);
             this.button_send_times.TabIndex = 19;
@@ -297,7 +292,7 @@
             // 
             // button_single_capture
             // 
-            this.button_single_capture.Location = new System.Drawing.Point(25, 460);
+            this.button_single_capture.Location = new System.Drawing.Point(25, 524);
             this.button_single_capture.Name = "button_single_capture";
             this.button_single_capture.Size = new System.Drawing.Size(90, 23);
             this.button_single_capture.TabIndex = 20;
@@ -307,7 +302,7 @@
             // 
             // button_auto_capture
             // 
-            this.button_auto_capture.Location = new System.Drawing.Point(25, 431);
+            this.button_auto_capture.Location = new System.Drawing.Point(25, 495);
             this.button_auto_capture.Name = "button_auto_capture";
             this.button_auto_capture.Size = new System.Drawing.Size(90, 23);
             this.button_auto_capture.TabIndex = 21;
@@ -318,7 +313,7 @@
             // checkBox_skip_2nd
             // 
             this.checkBox_skip_2nd.AutoSize = true;
-            this.checkBox_skip_2nd.Location = new System.Drawing.Point(135, 431);
+            this.checkBox_skip_2nd.Location = new System.Drawing.Point(135, 495);
             this.checkBox_skip_2nd.Name = "checkBox_skip_2nd";
             this.checkBox_skip_2nd.Size = new System.Drawing.Size(68, 17);
             this.checkBox_skip_2nd.TabIndex = 22;
@@ -326,11 +321,70 @@
             this.checkBox_skip_2nd.UseVisualStyleBackColor = true;
             this.checkBox_skip_2nd.CheckedChanged += new System.EventHandler(this.checkBox_skip_2nd_CheckedChanged);
             // 
+            // button_train
+            // 
+            this.button_train.Location = new System.Drawing.Point(135, 262);
+            this.button_train.Name = "button_train";
+            this.button_train.Size = new System.Drawing.Size(75, 23);
+            this.button_train.TabIndex = 23;
+            this.button_train.Text = "Train";
+            this.button_train.UseVisualStyleBackColor = true;
+            this.button_train.Click += new System.EventHandler(this.button_train_Click);
+            // 
+            // radioButton_raw
+            // 
+            this.radioButton_raw.AutoSize = true;
+            this.radioButton_raw.Checked = true;
+            this.radioButton_raw.Location = new System.Drawing.Point(16, 19);
+            this.radioButton_raw.Name = "radioButton_raw";
+            this.radioButton_raw.Size = new System.Drawing.Size(47, 17);
+            this.radioButton_raw.TabIndex = 24;
+            this.radioButton_raw.TabStop = true;
+            this.radioButton_raw.Text = "Raw";
+            this.radioButton_raw.UseVisualStyleBackColor = true;
+            this.radioButton_raw.CheckedChanged += new System.EventHandler(this.radioButton_raw_CheckedChanged);
+            // 
+            // radioButton_trained
+            // 
+            this.radioButton_trained.AutoSize = true;
+            this.radioButton_trained.Location = new System.Drawing.Point(16, 42);
+            this.radioButton_trained.Name = "radioButton_trained";
+            this.radioButton_trained.Size = new System.Drawing.Size(61, 17);
+            this.radioButton_trained.TabIndex = 25;
+            this.radioButton_trained.Text = "Trained";
+            this.radioButton_trained.UseVisualStyleBackColor = true;
+            this.radioButton_trained.CheckedChanged += new System.EventHandler(this.radioButton_trained_CheckedChanged);
+            // 
+            // radioButton_filtered
+            // 
+            this.radioButton_filtered.AutoSize = true;
+            this.radioButton_filtered.Location = new System.Drawing.Point(16, 65);
+            this.radioButton_filtered.Name = "radioButton_filtered";
+            this.radioButton_filtered.Size = new System.Drawing.Size(59, 17);
+            this.radioButton_filtered.TabIndex = 26;
+            this.radioButton_filtered.Text = "Filtered";
+            this.radioButton_filtered.UseVisualStyleBackColor = true;
+            this.radioButton_filtered.CheckedChanged += new System.EventHandler(this.radioButton_filtered_CheckedChanged);
+            // 
+            // groupBox_display_data
+            // 
+            this.groupBox_display_data.Controls.Add(this.radioButton_filtered);
+            this.groupBox_display_data.Controls.Add(this.radioButton_trained);
+            this.groupBox_display_data.Controls.Add(this.radioButton_raw);
+            this.groupBox_display_data.Location = new System.Drawing.Point(25, 223);
+            this.groupBox_display_data.Name = "groupBox_display_data";
+            this.groupBox_display_data.Size = new System.Drawing.Size(104, 88);
+            this.groupBox_display_data.TabIndex = 27;
+            this.groupBox_display_data.TabStop = false;
+            this.groupBox_display_data.Text = "Display data";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1590, 705);
+            this.Controls.Add(this.groupBox_display_data);
+            this.Controls.Add(this.button_train);
             this.Controls.Add(this.checkBox_skip_2nd);
             this.Controls.Add(this.button_auto_capture);
             this.Controls.Add(this.button_single_capture);
@@ -340,7 +394,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button_send_params);
             this.Controls.Add(this.textBox_param);
-            this.Controls.Add(this.button_filtered);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button_send_freq);
             this.Controls.Add(this.textBox_samplef);
@@ -358,6 +411,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox_display_data.ResumeLayout(false);
+            this.groupBox_display_data.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,7 +438,6 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button_filtered;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button_send_params;
         private System.Windows.Forms.TextBox textBox_param;
@@ -393,6 +447,11 @@
         private System.Windows.Forms.Button button_single_capture;
         private System.Windows.Forms.Button button_auto_capture;
         private System.Windows.Forms.CheckBox checkBox_skip_2nd;
+        private System.Windows.Forms.Button button_train;
+        private System.Windows.Forms.RadioButton radioButton_raw;
+        private System.Windows.Forms.RadioButton radioButton_trained;
+        private System.Windows.Forms.RadioButton radioButton_filtered;
+        private System.Windows.Forms.GroupBox groupBox_display_data;
     }
 }
 

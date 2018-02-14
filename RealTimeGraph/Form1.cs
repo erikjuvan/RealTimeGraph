@@ -566,25 +566,6 @@ namespace RealTimeGraph
 			}
 		}
 
-        private void button_filtered_Click(object sender, EventArgs e)
-        {
-            if (serialPort.IsOpen)
-            {
-                if (filtered)
-                {
-                    serialPort.Write("CRAW");
-                    filtered = false;
-                    button_filtered.Text = "RAW";
-                }
-                else
-                {
-                    serialPort.Write("CFILTR");
-                    filtered = true;
-                    button_filtered.Text = "FILTERED";
-                }
-            }
-        }
-
         private void button_send_params_Click(object sender, EventArgs e)
         {
             if (serialPort.IsOpen)
@@ -635,6 +616,38 @@ namespace RealTimeGraph
                 {
                     serialPort.Write("CSKIPSCND,0");
                 }
+            }
+        }
+
+        private void button_train_Click(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                serialPort.Write("CTRAIN");
+            }
+        }
+
+        private void radioButton_raw_CheckedChanged(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                serialPort.Write("CRAW");
+            }
+        }
+
+        private void radioButton_trained_CheckedChanged(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                serialPort.Write("CTRAINED");
+            }
+        }
+
+        private void radioButton_filtered_CheckedChanged(object sender, EventArgs e)
+        {
+            if (serialPort.IsOpen)
+            {
+                serialPort.Write("CFILTERED");
             }
         }
     }
