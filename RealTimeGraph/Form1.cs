@@ -72,6 +72,7 @@ namespace RealTimeGraph
         bool single_capture_caught = false;
         int single_capture_cntr = 0;
 
+        int david_counter = 0;
         public Form1()
 		{
 			InitializeComponent();
@@ -353,7 +354,13 @@ namespace RealTimeGraph
 
                 for (int i = 0; i < n_samples; i++)
                 {
-                    adcPairList[i % N_CHANNELS][(PAIR_LIST_MULTIPLES - 1) * DATA_CHANNEL_SIZE + i / N_CHANNELS].Y = data[i % N_CHANNELS, i / N_CHANNELS];
+                    float tmp_data = data[i % N_CHANNELS, i / N_CHANNELS];
+                    if (tmp_data >= threashold)
+                    {
+                        david_counter++;
+                        label_counter.Text = david_counter.ToString();
+                    }
+                    adcPairList[i % N_CHANNELS][(PAIR_LIST_MULTIPLES - 1) * DATA_CHANNEL_SIZE + i / N_CHANNELS].Y = tmp_data;
 
                     if (recordData)
                         textFile[i % N_CHANNELS].Append(intPacketData[i].ToString() + ",");
@@ -649,6 +656,12 @@ namespace RealTimeGraph
             {
                 serialPort.Write("CFILTERED");
             }
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            david_counter = 0;
+            label_counter.Text = "0";
         }
     }
 }

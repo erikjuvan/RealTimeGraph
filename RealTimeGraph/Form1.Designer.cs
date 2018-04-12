@@ -61,6 +61,8 @@
             this.radioButton_trained = new System.Windows.Forms.RadioButton();
             this.radioButton_filtered = new System.Windows.Forms.RadioButton();
             this.groupBox_display_data = new System.Windows.Forms.GroupBox();
+            this.label_counter = new System.Windows.Forms.Label();
+            this.button_reset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox_display_data.SuspendLayout();
             this.SuspendLayout();
@@ -378,11 +380,32 @@
             this.groupBox_display_data.TabStop = false;
             this.groupBox_display_data.Text = "Display data";
             // 
+            // label_counter
+            // 
+            this.label_counter.AutoSize = true;
+            this.label_counter.Location = new System.Drawing.Point(25, 596);
+            this.label_counter.Name = "label_counter";
+            this.label_counter.Size = new System.Drawing.Size(13, 13);
+            this.label_counter.TabIndex = 28;
+            this.label_counter.Text = "0";
+            // 
+            // button_reset
+            // 
+            this.button_reset.Location = new System.Drawing.Point(25, 621);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_reset.TabIndex = 29;
+            this.button_reset.Text = "RESET";
+            this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1590, 705);
+            this.Controls.Add(this.button_reset);
+            this.Controls.Add(this.label_counter);
             this.Controls.Add(this.groupBox_display_data);
             this.Controls.Add(this.button_train);
             this.Controls.Add(this.checkBox_skip_2nd);
@@ -452,6 +475,8 @@
         private System.Windows.Forms.RadioButton radioButton_trained;
         private System.Windows.Forms.RadioButton radioButton_filtered;
         private System.Windows.Forms.GroupBox groupBox_display_data;
+        private System.Windows.Forms.Label label_counter;
+        private System.Windows.Forms.Button button_reset;
     }
 }
 
