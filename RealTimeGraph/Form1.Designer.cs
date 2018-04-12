@@ -63,6 +63,9 @@
             this.groupBox_display_data = new System.Windows.Forms.GroupBox();
             this.label_counter = new System.Windows.Forms.Label();
             this.button_reset = new System.Windows.Forms.Button();
+            this.textBox_blind_level = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button_set_edges = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox_display_data.SuspendLayout();
             this.SuspendLayout();
@@ -383,7 +386,7 @@
             // label_counter
             // 
             this.label_counter.AutoSize = true;
-            this.label_counter.Location = new System.Drawing.Point(25, 596);
+            this.label_counter.Location = new System.Drawing.Point(25, 654);
             this.label_counter.Name = "label_counter";
             this.label_counter.Size = new System.Drawing.Size(13, 13);
             this.label_counter.TabIndex = 28;
@@ -391,19 +394,48 @@
             // 
             // button_reset
             // 
-            this.button_reset.Location = new System.Drawing.Point(25, 621);
+            this.button_reset.Location = new System.Drawing.Point(25, 670);
             this.button_reset.Name = "button_reset";
-            this.button_reset.Size = new System.Drawing.Size(75, 23);
+            this.button_reset.Size = new System.Drawing.Size(63, 23);
             this.button_reset.TabIndex = 29;
             this.button_reset.Text = "RESET";
             this.button_reset.UseVisualStyleBackColor = true;
             this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
+            // textBox_blind_level
+            // 
+            this.textBox_blind_level.Location = new System.Drawing.Point(94, 629);
+            this.textBox_blind_level.Name = "textBox_blind_level";
+            this.textBox_blind_level.Size = new System.Drawing.Size(61, 20);
+            this.textBox_blind_level.TabIndex = 30;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(25, 632);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Blind level";
+            // 
+            // button_set_edges
+            // 
+            this.button_set_edges.Location = new System.Drawing.Point(164, 629);
+            this.button_set_edges.Name = "button_set_edges";
+            this.button_set_edges.Size = new System.Drawing.Size(39, 20);
+            this.button_set_edges.TabIndex = 34;
+            this.button_set_edges.Text = "SET";
+            this.button_set_edges.UseVisualStyleBackColor = true;
+            this.button_set_edges.Click += new System.EventHandler(this.button_set_edges_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1590, 705);
+            this.ClientSize = new System.Drawing.Size(1590, 765);
+            this.Controls.Add(this.button_set_edges);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox_blind_level);
             this.Controls.Add(this.button_reset);
             this.Controls.Add(this.label_counter);
             this.Controls.Add(this.groupBox_display_data);
@@ -477,6 +509,9 @@
         private System.Windows.Forms.GroupBox groupBox_display_data;
         private System.Windows.Forms.Label label_counter;
         private System.Windows.Forms.Button button_reset;
+        private System.Windows.Forms.TextBox textBox_blind_level;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button_set_edges;
     }
 }
 
