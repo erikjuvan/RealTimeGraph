@@ -676,31 +676,30 @@ namespace RealTimeGraph
             blind_level = Convert.ToDouble(textBox_blind_level.Text);            
         }
 
-        bool[] trigger_found = new bool[N_CHANNELS];
-        double[] prev_value = new double[N_CHANNELS];   
-
-        double prev_derivative;
+        const double Min_Derivative = 10.0;
+        double[] prev_value = new double[N_CHANNELS];
+        double[] prev_derivative = new double[N_CHANNELS];
 
         public void FindDerivativeTriggers(int n_samples)
         {
             for (int ch = 0; ch < N_CHANNELS; ++ch)
             {
-                for (int i = 0; i < (n_samples / N_CHANNELS); i += 2)
+                for (int i = 0; i < (n_samples / N_CHANNELS); i += 10)
                 {
-                    double derivative = adcPairList[ch][i].Y - prev_value[ch];
-                    if (trigger_found[ch] == false && adcPairList[ch][i].Y > blind_level && derivative < 0 && prev_derivative > 0)
+                    if (adcPairList[ch][i].Y >= blind_level)
                     {
-                        trigger_found[ch] = true;
-                        david_counter++;
-                    }
+                        double derivative = adcPairList[ch][i].Y - prev_value[ch];
+                        if (Math.Abs(derivative) >= Min_Derivative)
+                        {
+                            if (derivative < 0 && prev_derivative[ch] > 0)
+                            {
+                                david_counter++;
+                            }
 
-                    if (derivative > 0 && prev_derivative < 0 || adcPairList[ch][i].Y < blind_level)
-                    {
-                        trigger_found[ch] = false;
-                    }
-
-                    prev_value[ch] = adcPairList[ch][i].Y;
-                    prev_derivative = derivative;
+                            prev_value[ch] = adcPairList[ch][i].Y;
+                            prev_derivative[ch] = derivative;
+                        }                        
+                    }                    
                 }
             }
         }
