@@ -116,7 +116,7 @@ namespace RealTimeGraph
             zedGraphControl1.AxisChange();
             zedGraphControl1.Invalidate();
 
-            myPane.Title.Text = "LINEX sorting control devel";
+            myPane.Title.Text = "Real Time Graph";
             myPane.XAxis.Title.Text = "Sample";
             myPane.YAxis.Title.Text = "ADC value";
 
@@ -681,10 +681,10 @@ namespace RealTimeGraph
 
         public void FindDerivativeTriggers(int n_samples)
         {
-            const double Min_Derivative = 10.0;
+            const double Min_Derivative = 100.0;
             for (int ch = 0; ch < N_CHANNELS; ++ch)
             {
-                for (int i = 0; i < (n_samples / N_CHANNELS); i += 10)
+                for (int i = 0; i < (n_samples / N_CHANNELS); i += 5)
                 {
                     if (adcPairList[ch][i].Y >= blind_level)
                     {

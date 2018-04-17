@@ -462,7 +462,7 @@
             this.Controls.Add(this.Run_button);
             this.Controls.Add(this.zedGraphControl1);
             this.Name = "Form1";
-            this.Text = "Sorting control v0.1";
+            this.Text = "Real Time Graph v1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
