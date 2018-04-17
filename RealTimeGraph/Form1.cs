@@ -675,13 +675,13 @@ namespace RealTimeGraph
         {
             blind_level = Convert.ToDouble(textBox_blind_level.Text);            
         }
-
-        const double Min_Derivative = 10.0;
+        
         double[] prev_value = new double[N_CHANNELS];
         double[] prev_derivative = new double[N_CHANNELS];
 
         public void FindDerivativeTriggers(int n_samples)
         {
+            const double Min_Derivative = 10.0;
             for (int ch = 0; ch < N_CHANNELS; ++ch)
             {
                 for (int i = 0; i < (n_samples / N_CHANNELS); i += 10)
@@ -704,5 +704,4 @@ namespace RealTimeGraph
             }
         }
     }
-
 }
