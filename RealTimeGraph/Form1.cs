@@ -126,8 +126,7 @@ namespace RealTimeGraph
 				textFile[i] = new StringBuilder();
 			}
 
-            //AddRawSignal();
-            serialPort.Write("VRBS,1"); // Verbose mode is default at start up
+            //AddRawSignal();            
         }
 
 		private int FindStartFrame(byte[] ba, int offset, int len)
@@ -403,8 +402,9 @@ namespace RealTimeGraph
 				serialPort.Open();
 				if (serialPort.IsOpen && timer1.Enabled == false)
 				{
-					//serialPort.Write("go");
-					Run_button.BackColor = Color.Green;
+                    serialPort.Write("VRBS,1"); // Verbose mode is default at start up
+                    //serialPort.Write("go");
+                    Run_button.BackColor = Color.Green;
                     button_auto_capture.BackColor = Color.Yellow;
                     Thread comThread = new Thread(HandleUSBTraffic);
 					comThread.Start();
