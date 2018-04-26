@@ -61,6 +61,7 @@
             this.radioButton_trained = new System.Windows.Forms.RadioButton();
             this.radioButton_filtered = new System.Windows.Forms.RadioButton();
             this.groupBox_display_data = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox_display_data.SuspendLayout();
             this.SuspendLayout();
@@ -378,11 +379,25 @@
             this.groupBox_display_data.TabStop = false;
             this.groupBox_display_data.Text = "Display data";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(142, 199);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(65, 17);
+            this.checkBox1.TabIndex = 28;
+            this.checkBox1.Text = "Verbose";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1590, 705);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox_display_data);
             this.Controls.Add(this.button_train);
             this.Controls.Add(this.checkBox_skip_2nd);
@@ -452,6 +467,7 @@
         private System.Windows.Forms.RadioButton radioButton_trained;
         private System.Windows.Forms.RadioButton radioButton_filtered;
         private System.Windows.Forms.GroupBox groupBox_display_data;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

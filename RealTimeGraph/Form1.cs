@@ -126,8 +126,9 @@ namespace RealTimeGraph
 				textFile[i] = new StringBuilder();
 			}
 
-			//AddRawSignal();
-		}
+            //AddRawSignal();
+            serialPort.Write("VRBS,1"); // Verbose mode is default at start up
+        }
 
 		private int FindStartFrame(byte[] ba, int offset, int len)
 		{
@@ -648,6 +649,17 @@ namespace RealTimeGraph
             if (serialPort.IsOpen)
             {
                 serialPort.Write("CFILTERED");
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                serialPort.Write("VRBS,1");
+            } else
+            {
+                serialPort.Write("VRBS,0");
             }
         }
     }
