@@ -630,7 +630,7 @@ namespace RealTimeGraph
 
         private void radioButton_raw_CheckedChanged(object sender, EventArgs e)
         {
-            if (serialPort.IsOpen)
+            if (serialPort.IsOpen && radioButton_raw.Checked)
             {
                 serialPort.Write("CRAW");
             }
@@ -638,7 +638,7 @@ namespace RealTimeGraph
 
         private void radioButton_trained_CheckedChanged(object sender, EventArgs e)
         {
-            if (serialPort.IsOpen)
+            if (serialPort.IsOpen && radioButton_trained.Checked)
             {
                 serialPort.Write("CTRAINED");
             }
@@ -646,7 +646,7 @@ namespace RealTimeGraph
 
         private void radioButton_filtered_CheckedChanged(object sender, EventArgs e)
         {
-            if (serialPort.IsOpen)
+            if (serialPort.IsOpen && radioButton_filtered.Checked)
             {
                 serialPort.Write("CFILTERED");
             }
