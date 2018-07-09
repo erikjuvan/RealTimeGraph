@@ -61,7 +61,8 @@
             this.radioButton_trained = new System.Windows.Forms.RadioButton();
             this.radioButton_filtered = new System.Windows.Forms.RadioButton();
             this.groupBox_display_data = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox_verbose = new System.Windows.Forms.CheckBox();
+            this.button_bin_ascii = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox_display_data.SuspendLayout();
             this.SuspendLayout();
@@ -335,12 +336,10 @@
             // radioButton_raw
             // 
             this.radioButton_raw.AutoSize = true;
-            this.radioButton_raw.Checked = true;
             this.radioButton_raw.Location = new System.Drawing.Point(16, 19);
             this.radioButton_raw.Name = "radioButton_raw";
             this.radioButton_raw.Size = new System.Drawing.Size(47, 17);
             this.radioButton_raw.TabIndex = 24;
-            this.radioButton_raw.TabStop = true;
             this.radioButton_raw.Text = "Raw";
             this.radioButton_raw.UseVisualStyleBackColor = true;
             this.radioButton_raw.CheckedChanged += new System.EventHandler(this.radioButton_raw_CheckedChanged);
@@ -359,10 +358,12 @@
             // radioButton_filtered
             // 
             this.radioButton_filtered.AutoSize = true;
+            this.radioButton_filtered.Checked = true;
             this.radioButton_filtered.Location = new System.Drawing.Point(16, 65);
             this.radioButton_filtered.Name = "radioButton_filtered";
             this.radioButton_filtered.Size = new System.Drawing.Size(59, 17);
             this.radioButton_filtered.TabIndex = 26;
+            this.radioButton_filtered.TabStop = true;
             this.radioButton_filtered.Text = "Filtered";
             this.radioButton_filtered.UseVisualStyleBackColor = true;
             this.radioButton_filtered.CheckedChanged += new System.EventHandler(this.radioButton_filtered_CheckedChanged);
@@ -379,25 +380,36 @@
             this.groupBox_display_data.TabStop = false;
             this.groupBox_display_data.Text = "Display data";
             // 
-            // checkBox1
+            // checkBox_verbose
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(142, 199);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(65, 17);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.Text = "Verbose";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox_verbose.AutoSize = true;
+            this.checkBox_verbose.Checked = true;
+            this.checkBox_verbose.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_verbose.Location = new System.Drawing.Point(142, 199);
+            this.checkBox_verbose.Name = "checkBox_verbose";
+            this.checkBox_verbose.Size = new System.Drawing.Size(65, 17);
+            this.checkBox_verbose.TabIndex = 28;
+            this.checkBox_verbose.Text = "Verbose";
+            this.checkBox_verbose.UseVisualStyleBackColor = true;
+            this.checkBox_verbose.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // button_bin_ascii
+            // 
+            this.button_bin_ascii.Location = new System.Drawing.Point(135, 524);
+            this.button_bin_ascii.Name = "button_bin_ascii";
+            this.button_bin_ascii.Size = new System.Drawing.Size(75, 23);
+            this.button_bin_ascii.TabIndex = 29;
+            this.button_bin_ascii.Text = "BINARY";
+            this.button_bin_ascii.UseVisualStyleBackColor = true;
+            this.button_bin_ascii.Click += new System.EventHandler(this.button_bin_ascii_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1590, 705);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button_bin_ascii);
+            this.Controls.Add(this.checkBox_verbose);
             this.Controls.Add(this.groupBox_display_data);
             this.Controls.Add(this.button_train);
             this.Controls.Add(this.checkBox_skip_2nd);
@@ -467,7 +479,8 @@
         private System.Windows.Forms.RadioButton radioButton_trained;
         private System.Windows.Forms.RadioButton radioButton_filtered;
         private System.Windows.Forms.GroupBox groupBox_display_data;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox_verbose;
+        private System.Windows.Forms.Button button_bin_ascii;
     }
 }
 

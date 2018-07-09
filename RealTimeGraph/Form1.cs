@@ -72,6 +72,8 @@ namespace RealTimeGraph
         bool single_capture_caught = false;
         int single_capture_cntr = 0;
 
+        bool binary_mode = false;
+
         public Form1()
 		{
 			InitializeComponent();
@@ -402,8 +404,9 @@ namespace RealTimeGraph
 				serialPort.Open();
 				if (serialPort.IsOpen && timer1.Enabled == false)
 				{
+                    serialPort.Write("CFILTERED");
                     serialPort.Write("VRBS,1"); // Verbose mode is default at start up
-                    //serialPort.Write("go");
+                    
                     Run_button.BackColor = Color.Green;
                     button_auto_capture.BackColor = Color.Yellow;
                     Thread comThread = new Thread(HandleUSBTraffic);
@@ -654,13 +657,40 @@ namespace RealTimeGraph
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (serialPort.IsOpen)
             {
-                serialPort.Write("VRBS,1");
-            } else
+                if (checkBox_verbose.Checked == true)
+                {
+                    serialPort.Write("VRBS,1");
+                }
+                else
+                {
+                    serialPort.Write("VRBS,0");
+                }
+            }           
+        }
+
+        private void button_bin_ascii_Click(object sender, EventArgs e)
+        {
+            if (!binary_mode)
             {
-                serialPort.Write("VRBS,0");
+                binary_mode = true;
+
+                serialPort.Write("STRT");
+                byte[] bytes = new byte[2];
+                bytes[0] = bytes[1] = 0xff;
+                serialPort.Write(bytes, 0, 2);
+
+                button_bin_ascii.Text = "ASCII";
             }
+            else
+            {
+                binary_mode = false;
+                serialPort.Write("ASCII");
+
+                button_bin_ascii.Text = "BINARY";
+            }
+            
         }
     }
 }
